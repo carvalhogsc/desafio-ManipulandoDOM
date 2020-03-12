@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <title>Curso Javascript Modulo 2 - Exercicio 1</title>
+    </head>
+    <body>        
+        <div id="container">
+            <ul id="namesStudent">
+
+            </ul>
+
+        </div>
+        <script>
+        
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var ulNamesStudentElement = document.querySelector('#namesStudent')
+        
+        for (var x = 0 ; x < nomes.length ; x++){
+            var liNameStudentElement = document.createElement('li');
+            liNameStudentElement.innerHTML = nomes[x];
+            liNameStudentElement.value = x;
+            ulNamesStudentElement.appendChild(liNameStudentElement);
+        }
+
+
+        </script>
+    </body>
+</html>
