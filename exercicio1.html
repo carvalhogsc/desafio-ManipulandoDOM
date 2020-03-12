@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <title>Curso Javascript Modulo 2 - Exercicio 1</title>
+    </head>
+    <body>
+        <button id='buttonCreateSquare'>Create Square</button>
+        <div id="container">
+
+        </div>
+        <script>
+            var buttonCreateSquareElement = document.querySelector('#buttonCreateSquare');
+            var containerElement = document.querySelector('#container');
+            var numberSquare = 0;
+
+            buttonCreateSquareElement.onclick = function() {
+                
+                containerElement.appendChild(createSquare(numberSquare));
+                numberSquare++;
+            }
+
+            function createSquare(numberSquare) {
+                var squareElement = document.createElement('div');
+                squareElement.setAttribute("id", 'square' + numberSquare)
+                squareElement.style.width = '100px';
+                squareElement.style.height = '100px';
+                squareElement.style.margin = '10px 0 10px 0';
+                squareElement.style.backgroundColor = '#f00';
+
+                return squareElement;
+            }
+        </script>
+    </body>
+</html>
