@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <title>Curso Javascript Modulo 2 - Exercicio 1</title>
+    </head>
+    <body>
+        <button id='buttonCreateSquare'>Create Square</button>
+        <div id="container">
+
+        </div>
+        <script>
+            var buttonCreateSquareElement = document.querySelector('#buttonCreateSquare');
+            var containerElement = document.querySelector('#container');
+            var numberSquare = 0;
+
+            buttonCreateSquareElement.onclick = function() {
+                
+                containerElement.appendChild(createSquare(numberSquare));
+                numberSquare++;
+            }
+
+            function createSquare(numberSquare) {
+                var squareElement = document.createElement('div');
+                squareElement.setAttribute("id", 'square' + numberSquare);
+                squareElement.setAttribute("name", 'square');
+                squareElement.style.width = '100px';
+                squareElement.style.height = '100px';
+                squareElement.style.margin = '10px 0 10px 0';
+                squareElement.style.backgroundColor = '#f00';
+                squareElement.onmouseover = 
+                    function(){
+                        squareElement.style.backgroundColor = getRandomColor();
+                    };
+                return squareElement;
+            }
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+
+        </script>
+    </body>
+</html>
