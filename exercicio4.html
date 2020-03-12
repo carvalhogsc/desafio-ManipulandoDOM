@@ -6,6 +6,8 @@
     </head>
     <body>        
         <div id="container">
+            <input type="text" name="name" value="">
+            <button onClick="addNameStudent()">Adicionar</button>
             <ul id="namesStudent">
 
             </ul>
@@ -13,14 +15,17 @@
         </div>
         <script>
         
-        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+
         var ulNamesStudentElement = document.querySelector('#namesStudent');
         
-        for (var x = 0 ; x < nomes.length ; x++){
+        
+        function addNameStudent() {
+            var inputAddNameElement = document.querySelector('input[name=name]');
             var liNameStudentElement = document.createElement('li');
-            liNameStudentElement.innerHTML = nomes[x];
-            liNameStudentElement.value = x;
+            liNameStudentElement.innerHTML = inputAddNameElement.value;           
             ulNamesStudentElement.appendChild(liNameStudentElement);
+            inputAddNameElement.value = '';
         }
 
 
